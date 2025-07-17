@@ -250,3 +250,173 @@ $ git branch -r
 Tech Heaven Shop@Mufasa MINGW64 ~/myProject (dev)
 $
 ```
+
+## Bundle 1
+### Exercise 2
+
+```bash
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git add home.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash
+Saved working directory and index state WIP on main: 2d65a0f adding  README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash list
+stash@{0}: WIP on main: 2d65a0f adding README
+
+Writing objects: 100% (3/3), 1.78 KiB | 303.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Olivier-Masabo/git-practice.git
+   280769b..2d65a0f  main -> main
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git add home.html
+$ git add home.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)     
+$ git stash
+Saved working directory and index state WIP on main: 2d65a0f adding  README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)     
+$ git stash list
+stash@{0}: WIP on main: 2d65a0f adding README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)     
+$ git add about.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash
+Saved working directory and index state WIP on main: 2d65a0f adding  README
+
+$ git stash list
+stash@{0}: WIP on main: 2d65a0f adding README
+stash@{1}: WIP on main: 2d65a0f adding README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git add team.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash
+Saved working directory and index state WIP on main: 2d65a0f adding  README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash list
+stash@{0}: WIP on main: 2d65a0f adding README
+stash@{1}: WIP on main: 2d65a0f adding README
+stash@{2}: WIP on main: 2d65a0f adding README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash pop stash@{1}
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (97ad845b45e65c0330d5ad069cdc470000667c77)
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash list
+stash@{0}: WIP on main: 2d65a0f adding README
+stash@{1}: WIP on main: 2d65a0f adding README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash pop stash@{1}
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (c47863299fa811bdbd50a3b4f122cd8a74a6e20b)
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git add --all
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git commit -m "setup home and about page"
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git commit -m "setup home and about page"
+        new file:   about.html
+        new file:   home.html
+
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git commit -m "setup home and about page"
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git commit -m "setup home and about page"
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git commit -m "setup home and about page"
+[main 4527b0e] setup home and about page
+ 2 files changed, 22 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 615 bytes | 205.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/Olivier-Masabo/Gym-Git-Exercise-Solutions.git
+To https://github.com/Olivier-Masabo/git-practice.git
+   2d65a0f..4527b0e  main -> main
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash list
+stash@{0}: WIP on main: 2d65a0f adding README
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash pop stash@{0}
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped stash@{0} (b49abcf1c370de4c3f62ecd9b370ed292396e7b4)
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git reset
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git stash reset
+fatal: subcommand wasn't specified; 'push' can't be assumed due to unexpected token 'reset'
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$ git reset
+
+Tech Heaven Shop@Mufasa MINGW64 ~/myProject (main)
+$
+```
