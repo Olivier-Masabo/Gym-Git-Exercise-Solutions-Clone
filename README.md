@@ -251,7 +251,7 @@ Tech Heaven Shop@Mufasa MINGW64 ~/myProject (dev)
 $
 ```
 
-## Bundle 1
+ ## Bundle 1
 ### Exercise 2
 
 ```bash
